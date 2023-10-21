@@ -70,10 +70,12 @@ const styles = StyleSheet.create({
       height: 50,
       width:25,
       alignItems:"center"
+
     },errorText:{
-      color:"white",
-      alignContent:"center"
+      color:"white"
     }
+  
+
 });
 
 export default styles;
