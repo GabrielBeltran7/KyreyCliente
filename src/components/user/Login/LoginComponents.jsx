@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Image, TextInput, Text, TouchableOpacity } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'; // Importa los íconos
+import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'; 
 import ImageLogin from '../../../../image/ImageLogin/ImageLogin.png';
 import styles from './LoginComponentsStyle';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../../../../api/firebase/FirebaseConfig/FirebaseConfig";
 import { useNavigation } from '@react-navigation/native';
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import { getServicios } from '../../../Redux/Actions';
 
 export const LoginComponents = () => {
+const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(getServicios())
+  })
+  const servicios = useSelector((state)=>state.servicios)
+  console.log("8888888888888",servicios)
   const navigation = useNavigation();
   const [emailError, setEmailError] = useState("");
   const [input, setInputs] = useState({
@@ -54,6 +61,7 @@ const RecoverPassword = ()=>{
 
   return (
     <View style={styles.outerContainer}>
+      
       <View style={styles.container}>
         <Image source={ImageLogin} style={styles.image} />
         <View style={styles.inputContainer}>
