@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Image, TextInput, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  Image,
+  TextInput,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons"; // Importa los íconos
 import ImageLogin from "../../../../image/ImageLogin/ImageLogin.png";
@@ -8,7 +15,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../api/firebase/FirebaseConfig/FirebaseConfig";
 import { useNavigation } from "@react-navigation/native";
 
-export const LoginComponents = () => {
+const LoginComponents = () => {
   const navigation = useNavigation();
   const [emailError, setEmailError] = useState("");
   const [input, setInputs] = useState({
@@ -69,14 +76,16 @@ export const LoginComponents = () => {
               onChangeText={(text) => handleChangeInput("email", text)}
             />
           </View>
-          <Text style={styles.errorText}>{emailError}</Text>
+          <Text style={styles.errorText}>
+            <Text>{emailError}</Text>
+          </Text>
           <View style={styles.iconInputContainer}>
             <View style={styles.tamaño}>
               <FontAwesomeIcon icon={faLock} style={styles.inputIcon} />
             </View>
             <TextInput
               style={styles.input}
-              placeholder="Password"
+              placeholder="Contraseña"
               secureTextEntry={true}
               value={input.password}
               onChangeText={(text) => handleChangeInput("password", text)}
@@ -102,3 +111,5 @@ export const LoginComponents = () => {
     </View>
   );
 };
+
+export default LoginComponents;

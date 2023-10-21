@@ -1,27 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-fallthrough */
-import {
-  GET_SERVICIOS,
-  
-} from "./ActionsTypes";
-let inicialState = {
- 
-  servicios: [],
-  
-};
+
+let inicialState = {};
 
 const rootReducer = (state = inicialState, action) => {
   switch (action.type) {
-    
-    case GET_SERVICIOS:
-      return {
-        ...state,
-        servicios: action.payload,
-      };
-      default:
+    default:
       return state;
   }
-  
 };
 
 export default rootReducer;

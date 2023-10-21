@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+// import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,19 +12,14 @@ const firebaseConfig = {
   storageBucket: "kyrey-d8ee3.appspot.com",
   messagingSenderId: "620686801617",
   appId: "1:620686801617:web:4f2db10ef60dbe99e823f0",
-  measurementId: "G-0C89KNV6PP"
+  measurementId: "G-0C89KNV6PP",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export {
-    app,
-    auth,
-    db,
-    analytics
-};
+export { app, auth, db };

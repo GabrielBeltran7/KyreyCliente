@@ -22,7 +22,7 @@ export const RegisterComponent = () => {
     <View style={style.container}>
       <Image source={ImageLogin} style={style.image} />
       <TextInput
-        onChange={handleChange}
+        onChangeText={handleChange}
         placeholder="Nombre"
         type="text"
         style={style.input}
@@ -33,11 +33,11 @@ export const RegisterComponent = () => {
         keyboardType="email-address"
         type="email"
         style={style.input}
-        onChange={handleChange}
+        onChangeText={handleChange}
       />
       <TextInput
         name="telefono"
-        onChange={handleChange}
+        onChangeText={handleChange}
         placeholder="Teléfono"
         type="number"
         style={style.input}
@@ -47,7 +47,7 @@ export const RegisterComponent = () => {
         placeholder="Password"
         type="password"
         style={style.input}
-        onChange={handleChange}
+        onChangeText={handleChange}
       />
       <TextInput
         placeholder="Confirmar Password"

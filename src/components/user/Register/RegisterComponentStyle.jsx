@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    gap: "10px",
     backgroundColor: "#FF6300",
     minHeight: "calc(100vh - 64px)",
   },
@@ -20,6 +19,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "black",
     width: "90%",
+    margin: "20px",
   },
 });
 

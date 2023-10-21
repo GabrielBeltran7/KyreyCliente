@@ -1,12 +1,13 @@
 import React from "react";
-import { LoginComponents } from "../../../components/user/Login/LoginComponents";
+import LoginComponents from "../../../components/user/Login/LoginComponents";
 import styles from "./LoginUserStyle";
+import { View } from "react-native";
 
 export const LoginUser = ({ navigation }) => {
   console.log(navigation);
   return (
-    <div className={styles.container}>
+    <View className={styles.container}>
       <LoginComponents />
-    </div>
+    </View>
   );
 };

@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-import { View, Image, TextInput, Text, TouchableOpacity, Alert } from 'react-native';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import ImageLogin from '../../../../image/ImageLogin/ImageLogin.png';
-import styles from './UserRecoverPasswordComponentsStyle';
-import { sendPasswordResetEmail } from 'firebase/auth';
+import React, { useState } from "react";
+import {
+  View,
+  Image,
+  TextInput,
+  Text,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import ImageLogin from "../../../../image/ImageLogin/ImageLogin.png";
+import styles from "./UserRecoverPasswordComponentsStyle";
+import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../../api/firebase/FirebaseConfig/FirebaseConfig";
-
 
 export const UserRecoverPasswordComponents = () => {
   const [input, setInputs] = useState({
@@ -38,9 +44,9 @@ export const UserRecoverPasswordComponents = () => {
 
     try {
       await sendPasswordResetEmail(auth, input.email);
-       alert("Correo  enviado con éxito.");
-   } catch (error) {
-     alert("Error al enviar el correo, revisalo que este bien: " );
+      // alert("Correo  enviado con éxito.");
+    } catch (error) {
+      // alert("Error al enviar el correo, revisalo que este bien: ");
     }
   };
   return (
@@ -53,12 +59,11 @@ export const UserRecoverPasswordComponents = () => {
               <FontAwesomeIcon icon={faEnvelope} style={styles.inputIcon} />
             </View>
             <TextInput
-              type="email"
               style={styles.input}
               placeholder="Email"
               keyboardType="email-address"
               value={input.email}
-              onChangeText={(text) => handleChangeInput('email', text)}
+              onChangeText={(text) => handleChangeInput("email", text)}
             />
           </View>
           <Text style={styles.errorText}>{emailError}</Text>
