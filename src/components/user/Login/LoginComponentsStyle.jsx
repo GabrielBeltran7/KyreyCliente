@@ -74,8 +74,6 @@ const styles = StyleSheet.create({
       color:"white",
       alignContent:"center"
     }
-  
-
 });
 
 export default styles;
