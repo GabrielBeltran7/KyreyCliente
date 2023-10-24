@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 import {
   View,
@@ -5,7 +7,7 @@ import {
   TextInput,
   Text,
   TouchableOpacity,
-  StyleSheet,
+  Alert
 } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons"; // Importa los íconos
@@ -34,6 +36,13 @@ const LoginComponents = () => {
     const emailRegex = /\S+@\S+\.\S+/;
     return emailRegex.test(email);
   };
+  const HomeMain =()=>{
+    navigation.navigate("HomeMain")
+  }
+
+  const RecoverPassword = () => {
+    navigation.navigate("UserRecoverPassword");
+  };
 
   const handleSignIn = async () => {
     if (!isEmailValid(input.email)) {
@@ -48,17 +57,39 @@ const LoginComponents = () => {
       );
       const user = userCredential.user;
       console.log(user);
-      // Realiza acciones adicionales después de iniciar sesión, si es necesario
+      HomeMain();
     } catch (error) {
-      console.log(error.firebase);
-      alert(error);
+      Alert.alert("Error", "Por favor revisa el correo o la contraseña", [
+        {
+          text: "ya",
+          style: "default", // Puedes usar "destructive" o "default" para personalizar el estilo del botón
+          onPress: () => {
+           
+          },
+        },
+      ],
+      {
+        cancelable: false, // Evita que la alerta se cierre al tocar fuera de ella
+        titleStyle: {
+          color: "red", // Color del título
+        },
+        messageStyle: {
+          color: "red", // Color del mensaje
+        },
+        containerStyle: {
+          backgroundColor: "red", // Fondo de la alerta
+        } }
+      
+      
+      
+      
+      );
     }
   };
 
-  const RecoverPassword = () => {
-    navigation.navigate("UserRecoverPassword");
-  };
+ 
 
+ 
   return (
     <View style={styles.outerContainer}>
       
@@ -86,7 +117,7 @@ const LoginComponents = () => {
             </View>
             <TextInput
               style={styles.input}
-              placeholder="prueba"
+              placeholder="Password"
               secureTextEntry={true}
               value={input.password}
               onChangeText={(text) => handleChangeInput("password", text)}
