@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
 
     backgroundColor: "#F25B06",
     minHeight: 1500,
-
   },
   container: {
     display: "flex",

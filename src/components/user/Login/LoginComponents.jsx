@@ -20,11 +20,12 @@ import { useNavigation } from "@react-navigation/native";
 const LoginComponents = () => {
   const navigation = useNavigation();
   const [emailError, setEmailError] = useState("");
+
   const [input, setInputs] = useState({
     email: "",
     password: "",
   });
-
+  
   const handleChangeInput = (name, value) => {
     setInputs({
       ...input,
@@ -56,13 +57,13 @@ const LoginComponents = () => {
         input.password
       );
       const user = userCredential.user;
-      console.log(user);
+      
       HomeMain();
     } catch (error) {
       Alert.alert("Error", "Por favor revisa el correo o la contraseña", [
         {
           text: "ya",
-          style: "default", // Puedes usar "destructive" o "default" para personalizar el estilo del botón
+          style: "default", 
           onPress: () => {
            
           },

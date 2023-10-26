@@ -8,6 +8,7 @@ import { store } from "./src/Redux/Store";
 import { LoginUser } from "./src/screens/users/Login/LoginUser";
 import { UserRecoverPassword } from "./src/screens/users/UserRecoverPassword/UserRecoverPassword";
 import HomeMain from "./src/screens/home/HomeMain/HomeMain";
+import Account from "./src/screens/users/Acoount/Account";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -25,6 +26,12 @@ export default function App() {
             component={UserRecoverPassword}
             options={{ title: "Recuperar Contraseña" }}
           />
+         <Stack.Screen
+         name="Account"
+         component={Account}
+         options={{title: "Cuenta"}}
+         />
+
           <Stack.Screen
             name="HomeMain"
             component={HomeMain}
