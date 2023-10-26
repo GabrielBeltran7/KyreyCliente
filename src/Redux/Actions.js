@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { GET_USER_PROFILE } from "./ActionsTypes"
+import { GET_USER_PROFILE, NEW_PHOTO_USER} from "./ActionsTypes"
 
 import { getFirestore, collection, where,getDocs, query } from "firebase/firestore";
 
@@ -23,3 +23,14 @@ export const getUserProfile = (email) => {
     }
   };
 };
+
+
+export  const dispatchImage =(newphoto) =>{
+  return async (dispatch) =>{
+    dispatch({
+      type: NEW_PHOTO_USER,
+      payload: newphoto
+    })
+  }
+
+}

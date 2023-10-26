@@ -14,6 +14,8 @@ const HomeComponentsMain = () => {
   useEffect(()=>{
     dispatch(getUserProfile(userEmail))
       },[])
+
+     
   return (
     <View>
       <HomeNanvar />

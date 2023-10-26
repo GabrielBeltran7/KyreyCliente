@@ -11,6 +11,7 @@ import HomeMain from "./src/screens/home/HomeMain/HomeMain";
 import Account from "./src/screens/users/Acoount/Account";
 import CameraComponents from "./src/components/Camera/Camera/CameraComponents"; 
 
+
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             component={CameraComponents}
             options={{ title: "camara" }}
           />
+          
           <Stack.Screen
             name="UserRecoverPassword"
             component={UserRecoverPassword}

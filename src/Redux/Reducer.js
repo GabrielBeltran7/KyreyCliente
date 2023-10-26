@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-fallthrough */
-import {GET_USER_PROFILE} from "./ActionsTypes"
+import {GET_USER_PROFILE, NEW_PHOTO_USER} from "./ActionsTypes"
 
 let inicialState = {
-  userdate:[]
+  userdate:[],
+  newphotouser:[]
 };
 
 
@@ -15,6 +16,11 @@ const rootReducer = (state = inicialState, action) => {
         ...state,
         userdata:action.payload,
       }
+      case NEW_PHOTO_USER:
+        return{
+          ...state,
+          newphotouser:action.payload
+        }
     default:
       return state;
   }
