@@ -24,14 +24,14 @@ export const RegisterComponent = () => {
       <TextInput
         onChangeText={handleChange}
         placeholder="Nombre"
-        type="text"
+        
         style={style.input}
       />
       <TextInput
         name="email"
         placeholder="Correo"
         keyboardType="email-address"
-        type="email"
+        
         style={style.input}
         onChangeText={handleChange}
       />
@@ -39,19 +39,19 @@ export const RegisterComponent = () => {
         name="telefono"
         onChangeText={handleChange}
         placeholder="Teléfono"
-        type="number"
+        
         style={style.input}
       />
       <TextInput
         name="password"
         placeholder="Password"
-        type="password"
+        
         style={style.input}
         onChangeText={handleChange}
       />
       <TextInput
         placeholder="Confirmar Password"
-        type="password"
+        
         style={style.input}
       />
       <Button title="Crear Cuenta" />
