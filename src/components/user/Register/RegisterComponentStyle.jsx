@@ -1,12 +1,16 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: {
+  outerContainer: {
     flex: 1,
+    backgroundColor: "#F25B06",
+    minHeight: 1500,
+  },
+  container: {
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FF6300",
-    minHeight: "calc(100vh - 64px)",
+    marginTop: 10,
   },
   text: {
     color: "#f98f",
@@ -18,8 +22,19 @@ const styles = StyleSheet.create({
   input: {
     borderBottomWidth: 1,
     borderBottomColor: "black",
-    width: "90%",
-    margin: "20px",
+    width: "80%",
+
+    height: 50,
+  },
+  button: {
+    backgroundColor: "#ffe500",
+    marginTop: 50,
+    width: "50%",
+    padding: 10,
+    borderRadius: 20,
+  },
+  textbutton: {
+    textAlign: "center",
   },
 });
 

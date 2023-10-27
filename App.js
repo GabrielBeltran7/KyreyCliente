@@ -8,6 +8,8 @@ import { store } from "./src/Redux/Store";
 import { LoginUser } from "./src/screens/users/Login/LoginUser";
 import { UserRecoverPassword } from "./src/screens/users/UserRecoverPassword/UserRecoverPassword";
 import HomeMain from "./src/screens/home/HomeMain/HomeMain";
+import Account from "./src/screens/users/Acoount/Account";
+import CameraComponents from "./src/components/Camera/Camera/CameraComponents"; 
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -21,10 +23,22 @@ export default function App() {
             options={{ title: "Inicio de Sesion" }}
           />
           <Stack.Screen
+            name="CameraComponents"
+            component={CameraComponents}
+            options={{ title: "camara" }}
+          />
+          <Stack.Screen
             name="UserRecoverPassword"
             component={UserRecoverPassword}
             options={{ title: "Recuperar Contraseña" }}
           />
+
+         <Stack.Screen
+         name="Account"
+         component={Account}
+         options={{title: "Cuenta"}}
+         />
+
           <Stack.Screen
             name="HomeMain"
             component={HomeMain}
