@@ -38,5 +38,4 @@ useEffect(()=>{
   
   );
 };
-
 export default ImagePickerComponent;

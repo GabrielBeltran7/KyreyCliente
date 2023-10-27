@@ -11,6 +11,7 @@ const HomeComponentsMain = () => {
   const dateUser = auth.currentUser;
   const userEmail = dateUser ? dateUser.email : '';
 
+  
       useEffect(()=>{
         dispatch(getUserProfile(userEmail))
           },[])
