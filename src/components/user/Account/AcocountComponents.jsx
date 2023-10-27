@@ -34,7 +34,7 @@ const AccountComponent = () => {
     ruc: userdata.ruc || "",
     password: "",
   });
-
+console.log("211111111111111111111111111222222222222222222222",input.photo)
 
   const navigateCamera = () => {
     navigation.navigate("CameraComponents");
@@ -58,14 +58,11 @@ const AccountComponent = () => {
     }
   }, [newphotouser]);
   
-  
-  useEffect(() => {
-    dispatch(getUserProfile("gabrielbeltranmedina@gmail.com"));
-  }, []);
 
-  // useEffect(() => {
-  //   dispatch(getUserProfile(userEmail));
-  // }, [dispatch, userEmail]);
+
+  useEffect(() => {
+    dispatch(getUserProfile(userEmail));
+  }, [dispatch, userEmail]);
 
   const takePictureButton = (
     <TouchableOpacity onPress={navigateCamera} style={styles.cameraButton}>
@@ -87,6 +84,7 @@ const AccountComponent = () => {
 
 
       <View style={styles.inputContainer}>
+        
         <Image
           source={{ uri: input.photo }}
           style={{ width: 100, height: 100 }}
@@ -120,17 +118,9 @@ const AccountComponent = () => {
           onChangeText={(text) => handleChangeInput("email", text)}
         />
       </View>
-      <View style={styles.inputContainer}>
-        <Icon name="user" size={20} color="black" style={styles.icon} />
-        <TextInput
-          style={styles.input}
-          placeholder="Foto"
-          value={input.photo}
-          onChangeText={(text) => handleChangeInput("photo", text)}
-          
-          
-        />
-      </View>
+     
+
+
       <View style={styles.inputContainer}>
         <Icon name="phone" size={20} color="blue" style={styles.icon} />
         <TextInput
@@ -140,6 +130,8 @@ const AccountComponent = () => {
           onChangeText={(text) => handleChangeInput("phone", text)}
           keyboardType="numeric"
         />
+
+
       </View>
       <View style={styles.inputContainer}>
         <Icon name="lock" size={20} color="black" style={styles.icon} />

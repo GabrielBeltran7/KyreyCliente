@@ -2,11 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   outerContainer: {
-
     flex: 1,
-    backgroundColor: "red", // Fondo naranja que cubre toda la pantalla
-    minHeight: "calc(100vh - 64px)",
-
     backgroundColor: "#F25B06",
     minHeight: 1500,
   },

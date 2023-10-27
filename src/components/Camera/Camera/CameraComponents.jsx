@@ -49,9 +49,9 @@ const CameraComponents = () => {
         try {
           const asset = await MediaLibrary.createAssetAsync(image);
           
-          alert('Imagen Guardada!  ✅');
+         
           dispatch(dispatchImage(image))  
-          
+          navigateAcount()
         } catch (error) {
             alert('No fue posible guardar la imagen!  ❌');
         }

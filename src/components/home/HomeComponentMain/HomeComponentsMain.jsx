@@ -10,13 +10,10 @@ const HomeComponentsMain = () => {
   dispatch = useDispatch()
   const dateUser = auth.currentUser;
   const userEmail = dateUser ? dateUser.email : '';
- 
-  useEffect(()=>{
-    dispatch(getUserProfile("gabrielbeltranmedina@hotmail.com"))
-      },[])
-      // useEffect(()=>{
-      //   dispatch(getUserProfile(userEmail))
-      //     },[])
+
+      useEffect(()=>{
+        dispatch(getUserProfile(userEmail))
+          },[])
      
   return (
     <View>
