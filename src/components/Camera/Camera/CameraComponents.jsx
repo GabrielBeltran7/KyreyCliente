@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { View, TextInput, Text, Image, Platform, StyleSheet } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import Constants from 'expo-constants';
 import { Camera } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
@@ -8,22 +8,19 @@ import Button from "../BottonCamera/Button"; // Asumo que la ruta está correcta
 import styles from './CameraComponentsStyle';
 import { useDispatch } from 'react-redux';
 import {dispatchImage} from "../../../Redux/Actions"
+import { useNavigation } from '@react-navigation/native';
+
 
 const CameraComponents = () => {
     dispatch = useDispatch()
+    const navigation= useNavigation()
+
     const [hasCameraPermission, setHasCameraPermission] = useState(null);
     const [image, setImage] = useState(null);
     const [type, setType] = useState(Camera.Constants.Type.front);
     const [flash, setFlash] = useState(Camera.Constants.FlashMode.off);
     const cameraRef = useRef(null);
   
-
-  
-
-// useEffect(()=>{
-//     dispatch(dispatchImage(image))  
-// },[dispatch, image])
-
 
     useEffect(() => {
       (async () => {
@@ -32,7 +29,9 @@ const CameraComponents = () => {
         await MediaLibrary.requestPermissionsAsync();
       })();
     }, []);
-  
+   const navigateAcount =()=>{
+    navigation.navigate("Account")
+   }
     const takePicture = async () => {
       if (cameraRef.current) {
         try {
@@ -52,7 +51,7 @@ const CameraComponents = () => {
           
           alert('Imagen Guardada!  ✅');
           dispatch(dispatchImage(image))  
-          console.log('saved successfully');
+          
         } catch (error) {
             alert('No fue posible guardar la imagen!  ❌');
         }

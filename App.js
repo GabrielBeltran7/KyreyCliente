@@ -10,6 +10,8 @@ import { UserRecoverPassword } from "./src/screens/users/UserRecoverPassword/Use
 import HomeMain from "./src/screens/home/HomeMain/HomeMain";
 import Account from "./src/screens/users/Acoount/Account";
 import CameraComponents from "./src/components/Camera/Camera/CameraComponents"; 
+import ImagePickerComponent from "./src/components/Camera/ImagePicker/ImagePickerComponent";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -17,13 +19,19 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="LoginUser">
+        <Stack.Navigator initialRouteName="HomeMain">
           <Stack.Screen
             name="LoginUser"
             component={LoginUser}
             options={{ title: "Inicio de Sesion" }}
           />
           <Stack.Screen
+            name="ImagePickerComponent"
+            component={ImagePickerComponent}
+            options={{ title: "Selcciona una imagen" }}
+          />
+
+         <Stack.Screen
             name="CameraComponents"
             component={CameraComponents}
             options={{ title: "camara" }}

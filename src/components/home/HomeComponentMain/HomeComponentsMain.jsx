@@ -12,9 +12,11 @@ const HomeComponentsMain = () => {
   const userEmail = dateUser ? dateUser.email : '';
  
   useEffect(()=>{
-    dispatch(getUserProfile(userEmail))
+    dispatch(getUserProfile("gabrielbeltranmedina@hotmail.com"))
       },[])
-
+      // useEffect(()=>{
+      //   dispatch(getUserProfile(userEmail))
+      //     },[])
      
   return (
     <View>

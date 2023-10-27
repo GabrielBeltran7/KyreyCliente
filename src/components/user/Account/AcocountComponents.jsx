@@ -35,9 +35,13 @@ const AccountComponent = () => {
     password: "",
   });
 
-  console.log("333333333333333333333333333", input);
+
   const navigateCamera = () => {
     navigation.navigate("CameraComponents");
+  };
+
+  const navigateImagePicker = () => {
+    navigation.navigate("ImagePickerComponent");
   };
 
   const handleChangeInput = (name, value) => {
@@ -54,10 +58,14 @@ const AccountComponent = () => {
     }
   }, [newphotouser]);
   
-
+  
   useEffect(() => {
-    dispatch(getUserProfile(userEmail));
-  }, [dispatch, userEmail]);
+    dispatch(getUserProfile("gabrielbeltranmedina@gmail.com"));
+  }, []);
+
+  // useEffect(() => {
+  //   dispatch(getUserProfile(userEmail));
+  // }, [dispatch, userEmail]);
 
   const takePictureButton = (
     <TouchableOpacity onPress={navigateCamera} style={styles.cameraButton}>
@@ -67,7 +75,17 @@ const AccountComponent = () => {
 
   return (
     <View>
+
+
       {takePictureButton}
+
+
+      <TouchableOpacity onPress={navigateImagePicker} style={styles.cameraButton}>
+      <Icon name="image" size={50} color="white" />
+    </TouchableOpacity>
+
+
+
       <View style={styles.inputContainer}>
         <Image
           source={{ uri: input.photo }}
