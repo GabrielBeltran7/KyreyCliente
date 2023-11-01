@@ -11,6 +11,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import ModalMenu from "react-native-modal";
 import styles from "./HomeModalStyle";
 import { useNavigation } from "@react-navigation/native";
+import { auth } from "../../../../api/firebase/FirebaseConfig/FirebaseConfig";
 
 const HomeModal = () => {
   const navigation = useNavigation()
@@ -19,6 +20,11 @@ const HomeModal = () => {
     const toggleMenu = () => {
       setMenuVisible(!isMenuVisible);
     };
+    const deslogueo = ()=>{
+      auth.signOut()
+      navigation.navigate("LoginUser")
+       };
+
 const navegateAccount =()=>{
   navigation.navigate("Account");
 }
@@ -34,9 +40,12 @@ const navegateAccount =()=>{
           <Text>Historial de Ordenes</Text>
           <Text>Historial de Delivery</Text>
           <Text>Agregar Orden</Text>
-          
           <TouchableOpacity onPress={toggleMenu}>
-            <Text>Salir</Text>
+            <Text>menu</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={deslogueo}>
+            <Text>Desloguearse</Text>
           </TouchableOpacity>
         </View>
       </ModalMenu>
